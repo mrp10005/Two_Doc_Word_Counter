@@ -27,7 +27,7 @@ class WordCounter:
         count = 0
         for file in files:
             if 'txt' in file or 'rtf' in file:
-                with open(file) as f:
+                with open(file,"r",encoding='utf-8') as f:
                     file_txt = f.read()
                     file_words = re.findall(regex, file_txt)
                     stemmed_words = self.Stemming(file_words, count)
